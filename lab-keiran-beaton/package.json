@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
+    "lint": "node ./node_modules/eslint/bin/eslint.js app/entry.js lib/map.js controller/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "angular-mocks": "^1.5.8",
+    "eslint": "^3.3.1",
     "jasmine-core": "^2.4.1",
     "karma": "^1.2.0",
     "karma-babel-preprocessor": "^6.0.1",
