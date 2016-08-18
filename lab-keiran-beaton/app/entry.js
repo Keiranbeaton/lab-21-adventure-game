@@ -6,4 +6,4 @@ require('./scss/base.scss');
 const angular = require('angular');
 const gameApp = angular.module('gameApp', []);
 
-require('./controller/gameController');
+require('./controller/gameController.js');

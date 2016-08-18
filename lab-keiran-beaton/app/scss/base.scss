@@ -1,0 +1,16 @@
+@import "_theme";
+@import "vendor/_normalize";
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: $app-background;
+  color: $app-text;
+}
+
+button {
+  background-color: $app-background;
+}

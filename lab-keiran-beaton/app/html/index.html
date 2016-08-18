@@ -8,13 +8,16 @@
   <body>
     <main ng-controller="GameController as gameCtrl">
       <h1>Buckaroo Banzai Across the 8th Dimension - The Game</h1>
-      <p>Buckaroo Banzai and his men, the Hong Kong Cavliers, have been placed in a building with no exits. In order to stop the evil plans of Dr. Emilio Lizardo, they must rescue the four black lectroids before they are caught by Dr. Lizardo's red lectroids. Move from room to room to find black lectroids. Good luck, the fate of the world is in your hands.</p>
+      <p>Buckaroo Banzai and his men, the Hong Kong Cavaliers, have been placed in a building with no exits. In order to stop the evil plans of Dr. Emilio Lizardo, they must rescue the six black lectroids before they are caught by Dr. Lizardo's red lectroids. If they kill one of the red lectroids they automatically save a black lectroid, but be careful! The red lectroids will certainly fight back. Move from room to room to find black lectroids. Good luck, the fate of the world is in your hands.</p>
       <form novalidate name="gamePadForm">
         <label for="direction">Choose Direction:</label>
-        <button type="button" name="direction" ng-model="gamePadForm.direction" ng-click="gameCtrl.moveDirection(gamePadForm.direction)" ng-repeat="item in gameCtrl.directions" value="{{item}}">{{item}}</button>
+        <select name="direction" ng-model="gamePadForm.direction">
+          <option  ng-repeat="direction in gameCtrl.directions" ng-init="gamePadForm.direction='west'" value="{{direction}}">{{direction}}</button>
+        </select>
+        <button type="button" ng-click="gameCtrl.chooseDirection(gamePadForm.direction)">Move</button>
       </form>
       <ol>
-        <li ng-repeat="action in gameCtrl.history track by action.id">{{action.text}}</li>
+        <li ng-repeat="item in gameCtrl.history track by item.id">{{item.text}}</li>
       </ol>
     </main>
   </body>

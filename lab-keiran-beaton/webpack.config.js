@@ -13,23 +13,25 @@ module.exports = {
     new ExtractText('bundle.css'),
   ],
   sassLoader: {
-    includePaths:`${__dirname}/app/scss/lib`,
+    includePaths: [`${__dirname}/app/scss/lib`],
   },
   postcss: function() {
     return [autoprefixer];
   },
-  loaders: [
-    {
-      test: /\.scss$/,
-      loader: ['style', 'css!postcss!sass!'],
-    },
-    {
-      test: /\.js$/,
-      loader: 'babel',
-      exclude: /node_modules/,
-      query: {
-        presets: ['es2015'],
+  module: {
+    loaders: [
+      {
+        test: /\.scss$/,
+        loader: ExtractText.extract('style', 'css!postcss!sass!'),
       },
-    },
-  ],
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015'],
+        },
+      },
+    ],
+  }
 };
