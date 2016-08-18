@@ -40,7 +40,7 @@ function GameController($log) {
         var roll = this.roll();
         $log.debug('roll', roll);
         if (roll < 5) {
-          this.logHistory(this.player.name + ' entered a new room. There was a bear in the room and it mauled him to death. Game Over.');
+          this.logHistory(this.player.name + ' entered a new room. Dr. Emilio Lizardo and his red lectroid\'s were in the room and killed you. Game Over.');
           this.gameOver = true;
           return;
         }

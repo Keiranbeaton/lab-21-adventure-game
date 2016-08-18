@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot",
-    "lint": "node ./node_modules/eslint/bin/eslint.js app/entry.js lib/map.js controller/*.js",
+    "lint": "node ./node_modules/eslint/bin/eslint.js ./app/lib/map.js ./app/controller/gameController.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
