@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="gameApp">
+  <head>
+    <title>Buckaroo Banzai Across the 8th Dimension - The Game</title>
+    <script src="bundle.js"></script>
+    <link rel="stylesheet" href="bundle.css">
+  </head>
+  <body>
+    <main ng-controller="GameController as gameCtrl">
+      <h1>Buckaroo Banzai Across the 8th Dimension - The Game</h1>
+      <p>Buckaroo Banzai and his men, the Hong Kong Cavliers, have been placed in a building with no exits. In order to stop the evil plans of Dr. Emilio Lizardo, they must rescue the four black lectroids before they are caught by Dr. Lizardo's red lectroids. Move from room to room to find black lectroids. Good luck, the fate of the world is in your hands.</p>
+      <form novalidate name="gamePadForm">
+        <label for="direction">Choose Direction:</label>
+        <button type="button" name="direction" ng-model="gamePadForm.direction" ng-click="gameCtrl.moveDirection(gamePadForm.direction)" ng-repeat="item in gameCtrl.directions" value="{{item}}">{{item}}</button>
+      </form>
+      <ol>
+        <li ng-repeat="action in gameCtrl.history track by action.id">{{action.text}}</li>
+      </ol>
+    </main>
+  </body>
+</html>
